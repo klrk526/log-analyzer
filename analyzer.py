@@ -11,3 +11,14 @@ def analyze():
             elif "INFO" in stroka:
                 count_info += 1
         return count_error, count_warning, count_info
+
+def analyzer_ip():
+    with open("sample.log", "r") as f1:
+        count_ip = {}
+        for stroka1 in f1:
+            words = stroka1.split()
+            ip = words[-1]
+            count_ip[ip] = count_ip.get(ip, 0) + 1
+        return count_ip
+
+    
